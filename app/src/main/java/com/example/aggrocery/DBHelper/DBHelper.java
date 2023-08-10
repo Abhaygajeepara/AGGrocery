@@ -5,12 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.format.DateFormat;
 import android.util.Log;
 
 import com.example.aggrocery.Models.StockModel;
 import com.example.aggrocery.Models.Usermodel;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -153,6 +155,79 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
         return stockList;
+    }
+    public boolean checkItemExistsInStock(String itemCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {DBCreation.COL_ITEM_CODE};
+        String selection = DBCreation.COL_ITEM_CODE + " = ?";
+        String[] selectionArgs = {itemCode};
+        Cursor cursor = db.query(DBCreation.TABLE_STOCK, columns, selection, selectionArgs, null, null, null);
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    // Method to get the available quantity of an item
+    public int getAvailableQuantity(String itemCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {DBCreation.COL_QTY_STOCK};
+        String selection = DBCreation.COL_ITEM_CODE + " = ?";
+        String[] selectionArgs = {itemCode};
+        Cursor cursor = db.query(DBCreation.TABLE_STOCK, columns, selection, selectionArgs, null, null, null);
+
+        int availableQuantity = 0;
+
+        if (cursor.moveToFirst()) {
+            int columnIndex = cursor.getColumnIndex(DBCreation.COL_QTY_STOCK);
+
+            Log.d("availableQuantity","asd"+String.valueOf(columnIndex));
+            if (columnIndex != -1) {
+                availableQuantity = cursor.getInt(columnIndex);
+                if (availableQuantity < 0) {
+                    availableQuantity = 0; // Ensure non-negative value
+                }
+            }
+        }
+
+        cursor.close();
+        return availableQuantity;
+    }
+
+
+
+    // Method to update stock quantity
+    public boolean updateStockQuantity(String itemCode, int newQuantity) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DBCreation.COL_QTY_STOCK, newQuantity);
+
+        int numRowsUpdated = db.update(
+                DBCreation.TABLE_STOCK,
+                values,
+                DBCreation.COL_ITEM_CODE + " = ?",
+                new String[]{itemCode}
+        );
+
+        return numRowsUpdated > 0;
+    }
+    public boolean addSalesDetails(String itemCode, String customerName, String customerEmail,
+                                   int qtySold, Date salesDate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DBCreation.COL_ITEM_CODE, itemCode);
+        values.put(DBCreation.COL_CUSTOMER_NAME, customerName);
+        values.put(DBCreation.COL_CUSTOMER_EMAIL, customerEmail);
+        values.put(DBCreation.COL_QTY_SOLD, qtySold);
+
+        // Convert the Date object to a suitable text format
+        String formattedDate = DateFormat.format("yyyy-MM-dd HH:mm:ss", salesDate).toString();
+        values.put(DBCreation.COL_DATE_OF_SALES, formattedDate);
+
+        long newRowId = db.insert(DBCreation.TABLE_SALES, null, values);
+        db.close();
+
+        return newRowId != -1;
     }
 }
 

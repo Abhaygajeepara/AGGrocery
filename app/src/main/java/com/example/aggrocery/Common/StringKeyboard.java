@@ -18,4 +18,12 @@ public  static  String error_price_non_negative = "Quantity and price must be no
     public  static  String error_CustomAlertDialog = "CustomAlertDialog";
     public static  String addStockSuccessfully = "Item added to stock successfully";
     public static  String failToAddStock = "Failed to add item to stock.";
+
+
+    public  static  String fail_to_add_stock = "Failed to add stock.";
+    public  static  String success_CustomAlertDialog = "Item has been successfully sold.";
+    public  static  String saleDateNotBeFutureDate = "Sales date can't be future date";
+    public  static  String ItemNotExistInDatabase = "Item not exist in database";
+    public  static  String SaleQtyMoreThanAvailbleQty = "Sale Qty more than available qty";
+
 }
