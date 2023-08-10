@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SalesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SalesFragment">
+
+        <!-- Item Code -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itemCodeTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/item_code_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_itemCodeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Customer Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/customerNameTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/customer_name_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_customerNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Customer Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/customerEmailTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/customer_email_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_customerEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Qty Sold -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/qtySoldTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/qty_sold_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_qtySoldEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Date of Sales -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_of_sales_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+        android:clickable="true"
+        android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Submit and Cancel Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

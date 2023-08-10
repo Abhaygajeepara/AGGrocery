@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">AGGrocery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_signUpLInk">Don\'t have an account?</string>
+    <string name="singUp_loginLink">Have an account?</string>
+
+
+    <string name="nav_addStock">Add Stock</string>
+    <string name="nav_sales">Sales</string>
+    <string name="nav_Purchase">Purchase</string>
+    <string name="nav_searchStock">Search Stock</string>
+    <string name="nav_listStock">List Stock</string>
+
+    // login
+    <string name="log_in">Log In</string>
+    <string name="sign_Up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">password</string>
+
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+
+
+    <string name="hint_item_name">Item Name</string>
+    <string name="hint_qty">Qty In Stock</string>
+    <string name="hint_price">Price</string>
+    <string name="radio_returnable">Returnable</string>
+    <string name="radio_non_returnable">Non-Returnable</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+
+
+
+    // add stock
+    <string name="item_name">Item Name</string>
+    <string name="qty_stock">Qty In Stock</string>
+    <string name="returnable">Returnable</string>
+    <string name="nonReturnable">Non-Returnable</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+
+
+    <string name="item_code_hint">Item Code</string>
+    <string name="customer_name_hint">Customer Name</string>
+    <string name="customer_email_hint">Customer Email</string>
+    <string name="qty_sold_hint">Qty Sold</string>
+    <string name="submit">Submit</string>
+    <string name="date_of_sales_hint">Sale Date</string>
+
+</resources>

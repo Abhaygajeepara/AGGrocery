@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_add_stock"
+        android:title="Add Stock" />
+
+    <item
+        android:id="@+id/nav_sales"
+        android:title="Sales" />
+
+    <item
+        android:id="@+id/nav_purchase"
+        android:title="Purchase" />
+
+    <item
+        android:id="@+id/nav_search_stock"
+        android:title="Search Stock" />
+
+    <item
+        android:id="@+id/nav_list_stock"
+        android:title="List Stock" />
+
+    <item
+        android:id="@+id/nav_log_out"
+        android:title="Log Out" />
+</menu>
