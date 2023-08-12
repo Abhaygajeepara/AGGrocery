@@ -42,6 +42,8 @@
     <string name="nonReturnable">Non-Returnable</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="noDataFound">No data found</string>
+    <string name="noItemFound">No Item found</string>
 
 
 
@@ -51,5 +53,16 @@
     <string name="qty_sold_hint">Qty Sold</string>
     <string name="submit">Submit</string>
     <string name="date_of_sales_hint">Sale Date</string>
+    <string name="date_of_purchase_hint">Purchase Date</string>
+    <string name="item_code">Item Code</string>
+    <string name="qty_purchased">Qty Purchased</string>
+    <string name="search">Search</string>
+
+    <string name="menu_add_stock">Add Stock</string>
+    <string name="menu_sales">Sales</string>
+    <string name="menu_purchase">Purchase</string>
+    <string name="menu_search_stock">Search Stock</string>
+    <string name="menu_list_stock">List Stock</string>
+    <string name="menu_log_out">Log Out</string>
 
 </resources>

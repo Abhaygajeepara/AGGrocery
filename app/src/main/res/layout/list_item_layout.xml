@@ -1,0 +1,35 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="10dp">
+
+    <!-- Item Code TextView -->
+    <TextView
+        android:id="@+id/itemCodeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <!-- Item Name TextView -->
+    <TextView
+        android:id="@+id/itemNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <!-- Quantity in Stock TextView -->
+    <TextView
+        android:id="@+id/qtyStockTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <!-- Price TextView -->
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>

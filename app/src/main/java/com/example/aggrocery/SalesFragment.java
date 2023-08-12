@@ -2,6 +2,7 @@ package com.example.aggrocery;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -87,8 +88,10 @@ public class SalesFragment extends Fragment {
         salesBinding.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate back to home page
-                // Add your navigation logic here
+                Intent intent = new Intent(mContext, HomeActivity.class);
+                startActivity(intent);
+                // Finish the current activity (AddStockFragment)
+                getActivity().finish();
             }
         });
 
@@ -148,7 +151,7 @@ public class SalesFragment extends Fragment {
         }
 
         // Check if the available quantity is sufficient for the quantity sold
-        int availableQuantity = databaseHelper.getAvailableQuantity(itemCode); // Replace with your logic
+        int availableQuantity = databaseHelper.getAvailableQuantity(itemCode);
         Log.d("availableQuantity",String.valueOf(availableQuantity));
         if (qtySold > availableQuantity) {
             CustomAlertDialog customAlertDialog = new CustomAlertDialog(
